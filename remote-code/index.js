@@ -15,30 +15,19 @@
     // Define the regex pattern to match any IP address
     const ipAddressRegex = /\b(?:\d{1,3}\.){3}\d{1,3}\b/g;
     // Define the IP address to replace the matched IP addresses
-    const replacementIpAddress = '200.32.246.130';
+    const replacementIpAddress = '190.197.81.60';
 
     // Define the location names to be replaced and the replacement location names
-    const countryToReplace = 'Nigeria';
-    const countryToReplace1 = 'United States';
+    const countryToReplace = 'Ghana';
+    // const countryToReplace1 = 'United States';
     const replacementCountry = 'Belize';
 
     const statesToReplace = [
-        'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue',
-        'Borno', 'Cross River', 'Delta', 'Ebonyi', 'Edo', 'Ekiti', 'Enugu', 'Gombe',
-        'Imo', 'Jigawa', 'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara', 'Lagos',
-        'Nasarawa', 'Niger', 'Ogun', 'Ondo', 'Osun', 'Oyo', 'Plateau', 'Rivers', 'Sokoto',
-        'Taraba', 'Yobe', 'Zamfara', 'Federal Capital Territory', 'FCT'
+        'Accra'
     ];
 
     const citiesToReplace = [
-        'Umuahia', 'Yola', 'Uyo', 'Awka', 'Bauchi', 'Yenagoa', 'Makurdi',
-        'Maiduguri', 'Calabar', 'Asaba', 'Abakaliki', 'Benin City', 'Ado-Ekiti',
-        'Enugu', 'Gombe', 'Owerri', 'Dutse', 'Kaduna', 'Kano', 'Katsina', 'Birnin Kebbi',
-        'Lokoja', 'Ilorin', 'Ikeja', 'Lafia', 'Minna', 'Abeokuta', 'Akure', 'Osogbo',
-        'Ibadan', 'Jos', 'Port Harcourt', 'Sokoto', 'Jalingo', 'Damaturu', 'Gusau',
-        'Abuja',
-
-        'Miami', 'Florida'
+        'chgcf'
     ];
 
     // Generate a regex pattern to match Nigerian state and city names
@@ -46,19 +35,19 @@
     const citiesRegexPattern = `\\b(${citiesToReplace.join('|')})\\b`;
 
     // Define the regex pattern to match network names (case-insensitive)
-    const networkRegex = /\bMTN(?: Networks Limited)?\b/gi;
-    const networkRegex1 = /\bAirtel(?: Nigeria Limited)?\b/gi;
+    // const networkRegex = /\bMTN(?: Networks Limited)?\b/gi;
+    const networkRegex1 = /\bVodafone(?: )?\b/gi;
     const networkRegex2 = /\bCyberzone(?: )?\b/gi;
 
     // Define the replacement word for any word starting with "Airtel"
-    const replacementNetwork = 'BTL';
+    const replacementNetwork = 'Belize Telemedia Limited';
 
     // Function to perform replacements on the target element
     function performReplacements(targetElement) {
         replaceText(targetElement, ipAddressRegex, replacementIpAddress);
         replaceText(targetElement, new RegExp(countryToReplace, 'g'), replacementCountry);
-        replaceText(targetElement, new RegExp(countryToReplace1, 'g'), replacementCountry);
-        replaceText(targetElement, networkRegex, replacementNetwork);
+        //replaceText(targetElement, new RegExp(countryToReplace1, 'g'), replacementCountry);
+        // replaceText(targetElement, networkRegex, replacementNetwork);
         replaceText(targetElement, networkRegex1, replacementNetwork);
         replaceText(targetElement, networkRegex2, replacementNetwork);
 
