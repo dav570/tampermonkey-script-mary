@@ -23,11 +23,11 @@
     const replacementCountry = 'Belize';
 
     const statesToReplace = [
-        'Accra'
+        'gccgh'
     ];
 
     const citiesToReplace = [
-        'chgcf'
+        'Accra'
     ];
 
     // Generate a regex pattern to match Nigerian state and city names
@@ -40,7 +40,8 @@
     const networkRegex2 = /\bCyberzone(?: )?\b/gi;
 
     // Define the replacement word for any word starting with "Airtel"
-    const replacementNetwork = 'Belize Telemedia Limited';
+    const replacementNetwork = 'BTL';
+    const replacementNetwork1 = 'Belize Telemedia Limited';
 
     // Function to perform replacements on the target element
     function performReplacements(targetElement) {
@@ -49,7 +50,7 @@
         //replaceText(targetElement, new RegExp(countryToReplace1, 'g'), replacementCountry);
         // replaceText(targetElement, networkRegex, replacementNetwork);
         replaceText(targetElement, networkRegex1, replacementNetwork);
-        replaceText(targetElement, networkRegex2, replacementNetwork);
+        replaceText(targetElement, networkRegex2, replacementNetwork1);
 
         // Generate regex patterns to match Nigerian state names and cities
         const stateNamesRegex = new RegExp(stateNamesRegexPattern, 'gi');
